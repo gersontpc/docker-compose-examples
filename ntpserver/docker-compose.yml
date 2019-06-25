@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  image: 
+    ntpserver: evoluservicesbr/ntpserver:latest
+    deploy:
+      restart_policy:
+        condition: on-failure
+    ports: 123:123/udp
+    networks:
+      - network-ntp
+
+networks:
+  network-ntp:
